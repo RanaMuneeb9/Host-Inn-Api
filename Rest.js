@@ -46,7 +46,7 @@ REST_ROUTER.prototype.handleRoutes = function (router, connection, md5) {
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
         var query = "Select * From ??";
-        var table = ["facilites"];
+        var table = ["facilities"];
         query = mysql.format(query, table);
         connection.query(query, function (err, rows) {
             if (err) {
