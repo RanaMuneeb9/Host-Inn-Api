@@ -16,7 +16,7 @@ REST_ROUTER.prototype.handleRoutes = function (router, connection, md5) {
     router.post("/adminLogin", function (req, res) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        var query = "Select admin_id,admin_name,admin_role,hostel_id From ?? Where admin_username=? AND admin_password=?";
+        var query = "Select admin_id,admin_name,admin_role,hostel_id,block_id From ?? Where admin_username=? AND admin_password=?";
         var table = ["hostel_admins", req.body.username, req.body.password];
         query = mysql.format(query, table);
         connection.query(query, function (err, rows) {
